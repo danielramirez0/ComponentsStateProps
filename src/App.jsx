@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import NamesList from "./components/NamesList/NamesList";
 import SuperHeroesTable from "./components/SuperHeroesTable/SuperHeroesTable";
+import IceCreamList from "./components/IceCreamList/IceCreamList";
 
 class App extends Component {
   state = {
@@ -12,7 +13,14 @@ class App extends Component {
       { id: 3, name: "Super Man", primaryAbility: "Super Speed", secondaryAbility: "Super Strength" },
       { id: 4, name: "Invincible", primaryAbility: "Flight", secondaryAbility: "Invulnerability" },
     ],
+    iceCreamFlavors: [],
   };
+
+  addNewFlavor(flavor) {
+    this.setState({
+      iceCreamFlavors: [...this.state.iceCreamFlavors, flavor],
+    });
+  }
 
   deleteHero(hero) {
     let newHeroes = this.state.superHeroes.filter(function (obj) {
@@ -28,6 +36,7 @@ class App extends Component {
       <div className="App">
         <NamesList names={this.state.names} />
         <SuperHeroesTable superHeroes={this.state.superHeroes} deleteHero={(hero) => this.deleteHero(hero)} />
+        <IceCreamList iceCreamFlavors={this.state.iceCreamFlavors} addNewFlavor={(flavor) => this.addNewFlavor(flavor)} />
       </div>
     );
   }
