@@ -13,11 +13,21 @@ class App extends Component {
       { id: 4, name: "Invincible", primaryAbility: "Flight", secondaryAbility: "Invulnerability" },
     ],
   };
+
+  deleteHero(hero) {
+    let newHeroes = this.state.superHeroes.filter(function (obj) {
+      return obj.id !== hero.id;
+    });
+    this.setState({
+      superHeroes: newHeroes,
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <NamesList names={this.state.names} />
-        <SuperHeroesTable superHeroes={this.state.superHeroes} />
+        <SuperHeroesTable superHeroes={this.state.superHeroes} deleteHero={(hero) => this.deleteHero(hero)} />
       </div>
     );
   }

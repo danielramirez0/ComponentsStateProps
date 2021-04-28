@@ -3,7 +3,6 @@ import "./NamesList.css";
 
 const NamesList = (props) => {
   let list = props.names;
-  console.log(list);
   return (
     <ul>
       {list.map((item) => (

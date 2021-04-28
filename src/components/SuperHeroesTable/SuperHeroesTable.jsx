@@ -5,21 +5,25 @@ const SuperHeroesTable = (props) => {
   let superHeroes = props.superHeroes;
   return (
     <table>
-      <thead>
-        <th>ID</th>
-        <th>NAME</th>
-        <th>PRIMARY ABILITY</th>
-        <th>SECONDARY ABILITY</th>
-      </thead>
-      {superHeroes.map((hero) => (
+      <tbody>
         <tr>
-          <td>{hero.id}</td>
-          <td>{hero.name}</td>
-          <td>{hero.primaryAbility}</td>
-          <td>{hero.secondaryAbility}</td>
-          {/* <td><button onClick={props.deleteItem(hero.id)}>Delete</button></td> */}
+          <th>ID</th>
+          <th>NAME</th>
+          <th>PRIMARY ABILITY</th>
+          <th>SECONDARY ABILITY</th>
         </tr>
-      ))}
+        {superHeroes.map((hero) => (
+          <tr key={hero.id}>
+            <td>{hero.id}</td>
+            <td>{hero.name}</td>
+            <td>{hero.primaryAbility}</td>
+            <td>{hero.secondaryAbility}</td>
+            <td>
+              <button onClick={() => props.deleteHero(hero)}>Delete</button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
     </table>
   );
 };
