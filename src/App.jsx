@@ -3,6 +3,7 @@ import "./App.css";
 import NamesList from "./components/NamesList/NamesList";
 import SuperHeroesTable from "./components/SuperHeroesTable/SuperHeroesTable";
 import IceCreamList from "./components/IceCreamList/IceCreamList";
+import SuperHeroCreateForm from "./components/SuperHeroCreateForm/SuperHeroCreateForm";
 
 class App extends Component {
   state = {
@@ -22,6 +23,12 @@ class App extends Component {
     });
   }
 
+  addHero(hero) {
+    this.setState({
+      superHeroes: [...this.state.superHeroes, hero],
+    });
+  }
+
   deleteHero(hero) {
     let newHeroes = this.state.superHeroes.filter(function (obj) {
       return obj.id !== hero.id;
@@ -37,6 +44,7 @@ class App extends Component {
         <NamesList names={this.state.names} />
         <SuperHeroesTable superHeroes={this.state.superHeroes} deleteHero={(hero) => this.deleteHero(hero)} />
         <IceCreamList iceCreamFlavors={this.state.iceCreamFlavors} addNewFlavor={(flavor) => this.addNewFlavor(flavor)} />
+        <SuperHeroCreateForm addHero={(hero) => this.addHero(hero)} />
       </div>
     );
   }

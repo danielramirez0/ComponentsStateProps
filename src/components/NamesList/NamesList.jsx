@@ -5,8 +5,8 @@ const NamesList = (props) => {
   let list = props.names;
   return (
     <ul>
-      {list.map((item) => (
-        <li key={list.indexOf(item)}>{item}</li>
+      {list.map((item, index) => (
+        <li key={index}>{item}</li>
       ))}
     </ul>
   );
