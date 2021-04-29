@@ -1,0 +1,24 @@
+Each exercise will require the creation of a new component. Each component file should be created inside of a components folder within your exercise React project. Once the component is created, instantiate the new component within the App.js component for testing.
+Component Exercises
+1.	Create a component that renders a list of names to the web page.
+a.	Hardcode a few string names in an array into the App component’s state object
+b.	Pass the array of strings as props to the component you created to be displayed in a list (using list tag)
+2.	Create a component that renders a table of superheroes to the web page.
+a.	Hardcode a few superhero objects (superhero id (this must be unique), superhero name, primary ability, secondary ability) in an array into the App component’s state object
+b.	Pass the array of objects as props to the SuperheroTable component you created to be displayed in a table (using table tag)
+3.	Delete a superhero from the table
+a.	Take the table from the previous example and create a delete button for each hero. 
+b.	On button click, it should remove that superhero from the table. 
+c.	HINT: create the delete function in the App component and pass it as a prop to the component that renders the table
+4.	Create a component that displays your favorite ice cream flavors in an unordered list
+a.	The component must contain a form for adding a new flavor to the list
+b.	HINT: this component will need a handleSumbit function that is called onSubmit of the form and a handleChange function that is called onChange of the input tag
+c.	HINT: this will need to be a class component
+5.	Create a component that will add a Superhero object to the array of objects in the App component state variable
+a.	The SuperheroCreateForm component will need to have a form with inputs for unique id, superhero name, primary ability, secondary ability. 
+b.	On button click, it should add that superhero to the table. 
+c.	HINT: create the add function in the App component and pass it as a prop to the component that renders the table
+6.	Create a component that consumes a jokes API and displays the received data with the joke setup and punchline on the page in h1 tags.
+a.	HINT: The API call will be a AXIOS GET request contained within the component’s componentDidMount lifecycle method.
+API Endpoint: https://official-joke-api.appspot.com/jokes/ten
+7.	If you haven’t already, for your Music Library project create a POST endpoint in your Node & Express API. Then create a React form to post a song to that API. 
